@@ -42,6 +42,8 @@ dependencies:
   flutter_stripe: ^10.1.1
 
   flutter_stripe_web: ^5.1.0
+  dartz: ^0.10.1
+  dio: ^5.4.3+1
 
 
 dependency_overrides:
