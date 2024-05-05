@@ -4,10 +4,10 @@ class PaymentIntentInputModel {
 
   const PaymentIntentInputModel({required this.amount, required this.currency});
 
-   toJson(){
+  toJson() {
     return {
-      'amount':amount,
-      'currency':currency,
+      'amount': int.parse(amount) * 100,
+      'currency': currency,
     };
   }
 }

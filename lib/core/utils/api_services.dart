@@ -7,7 +7,7 @@ class ApiServices {
 
   Future<Response> post({
     required String url,
-    required Map body,
+    required body,
     required String token,
     String? contentType,
   }) async {
@@ -19,6 +19,6 @@ class ApiServices {
         headers: {'Authorization': "Bearer $token"},
       ),
     );
-    return response.data;
+    return response;
   }
 }

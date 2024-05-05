@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:checkout_app/core/errors/failures.dart';
 import 'package:checkout_app/core/utils/stripe_services.dart';
 
@@ -22,8 +24,10 @@ class CheckoutRepoImpl extends CheckoutRepo {
       );
       return right(null);
     } on DioException catch (e) {
+      log(ServerFailure.fromDioException(dioException: e).toString());
       return left(ServerFailure.fromDioException(dioException: e));
     } catch (e) {
+      log(e.toString());
       return left(ServerFailure(errMessage: e.toString()));
     }
   }

@@ -44,15 +44,12 @@ class CheckoutViewBody extends StatelessWidget {
                 CustomButton(
                   text: 'Complete Payment',
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const PaymentDetailsView(),
-                    //   ),
-                    // );
                     showModalBottomSheet(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15),
+                        ),
                       ),
                       context: context,
                       builder: (context) {
