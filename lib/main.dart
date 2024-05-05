@@ -1,8 +1,12 @@
 import 'package:checkout_app/features/checkout/presentation/views/checkout_view.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'core/utils/simple_bloc_observers.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObservers();
   runApp(
     DevicePreview(
       enabled: false,
