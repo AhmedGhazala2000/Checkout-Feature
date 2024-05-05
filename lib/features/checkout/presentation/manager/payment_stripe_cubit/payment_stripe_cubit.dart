@@ -6,13 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'payment_stripe_state.dart';
 
 class PaymentStripeCubit extends Cubit<PaymentStripeState> {
-  PaymentStripeCubit(this.checkoutRepo) : super(PaymentStripeInitial());
-  final CheckoutRepo checkoutRepo;
+  PaymentStripeCubit(this._checkoutRepo) : super(PaymentStripeInitial());
+  final CheckoutRepo _checkoutRepo;
 
   Future makePayment(
       {required PaymentIntentInputModel paymentIntentInputModel}) async {
     emit(PaymentStripeLoading());
-    var data = await checkoutRepo.makePayment(
+    var data = await _checkoutRepo.makePayment(
         paymentIntentInputModel: paymentIntentInputModel);
     data.fold(
         (failure) => emit(PaymentStripeFailure(errMessage: failure.errMessage)),

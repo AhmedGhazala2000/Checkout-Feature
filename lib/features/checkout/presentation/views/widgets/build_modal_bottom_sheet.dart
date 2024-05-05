@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_button.dart';
+import 'custom_button_bloc_consumer.dart';
 import 'payment_methods.dart';
 
 class BuildModalBottomSheet extends StatelessWidget {
@@ -15,7 +15,7 @@ class BuildModalBottomSheet extends StatelessWidget {
         children: [
           PaymentMethods(),
           SizedBox(height: 16),
-          CustomButton(text: 'Continue'),
+          CustomButtonBlocConsumer(),
         ],
       ),
     );

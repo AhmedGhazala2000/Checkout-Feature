@@ -1,4 +1,10 @@
+import 'package:checkout_app/core/utils/api_services.dart';
+import 'package:checkout_app/core/utils/stripe_services.dart';
+import 'package:checkout_app/features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:checkout_app/features/checkout/presentation/manager/payment_stripe_cubit/payment_stripe_cubit.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'build_modal_bottom_sheet.dart';
 import 'custom_button.dart';
 import 'order_info_list_view.dart';
@@ -50,7 +56,17 @@ class CheckoutViewBody extends StatelessWidget {
                       ),
                       context: context,
                       builder: (context) {
-                        return const BuildModalBottomSheet();
+                        return BlocProvider(
+                            create: (context) => PaymentStripeCubit(
+                                  CheckoutRepoImpl(
+                                    stripeServices: StripeServices(
+                                      apiServices: ApiServices(
+                                        dio: Dio(),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            child: const BuildModalBottomSheet());
                       },
                     );
                   },
