@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 abstract class Failures {
   final String errMessage;
@@ -69,5 +70,14 @@ class ServerFailure extends Failures {
         errMessage: 'Oops there was an error, please try later!',
       );
     }
+  }
+}
+
+class StripeFailure extends Failures {
+  StripeFailure({required super.errMessage});
+
+  factory StripeFailure.fromStripeException(
+      {required StripeException stripeException}) {
+    return StripeFailure(errMessage: stripeException.error.message!);
   }
 }

@@ -7,6 +7,7 @@ import 'package:checkout_app/features/checkout/data/models/payment_intent_input_
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 import 'checkout_repo.dart';
 
@@ -24,8 +25,9 @@ class CheckoutRepoImpl extends CheckoutRepo {
       );
       return right(null);
     } on DioException catch (e) {
-      log(ServerFailure.fromDioException(dioException: e).toString());
       return left(ServerFailure.fromDioException(dioException: e));
+    } on StripeException catch (e) {
+      return left(StripeFailure.fromStripeException(stripeException: e));
     } catch (e) {
       log(e.toString());
       return left(ServerFailure(errMessage: e.toString()));
