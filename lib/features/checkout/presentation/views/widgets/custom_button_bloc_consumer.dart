@@ -1,3 +1,4 @@
+import 'package:checkout_app/core/functions/show_snack_bar.dart';
 import 'package:checkout_app/features/checkout/presentation/manager/payment_stripe_cubit/payment_stripe_cubit.dart';
 import 'package:checkout_app/features/checkout/presentation/views/widgets/execute_stripe_payment.dart';
 import 'package:checkout_app/features/checkout/presentation/views/widgets/thanks_view.dart';
@@ -23,19 +24,18 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           }));
         } else if (state is PaymentStripeFailure) {
           Navigator.pop(context);
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.errMessage),
-            ),
-          );
+          showSnackBar(context, state.errMessage);
         }
       },
       builder: (context, state) {
         return CustomButton(
           onPressed: () {
-            //executeStripePayment(context);
-
-            executePaypalPayment(context);
+            if (BlocProvider.of<PaymentStripeCubit>(context).currentIndex ==
+                0) {
+              executeStripePayment(context);
+            } else {
+              executePaypalPayment(context);
+            }
           },
           isLoading: state is PaymentStripeLoading ? true : false,
           text: 'Continue',

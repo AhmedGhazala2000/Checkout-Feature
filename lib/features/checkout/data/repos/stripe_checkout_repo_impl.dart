@@ -9,12 +9,12 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
-import 'checkout_repo.dart';
+import 'stripe_checkout_repo.dart';
 
-class CheckoutRepoImpl extends CheckoutRepo {
+class StripeCheckoutRepoImpl extends StripeCheckoutRepo {
   final StripeServices stripeServices;
 
-  CheckoutRepoImpl({required this.stripeServices});
+  StripeCheckoutRepoImpl({required this.stripeServices});
 
   @override
   Future<Either<Failures, void>> makePayment(

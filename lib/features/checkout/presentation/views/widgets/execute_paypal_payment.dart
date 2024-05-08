@@ -1,10 +1,12 @@
 import 'dart:developer';
 
+import 'package:checkout_app/core/functions/show_snack_bar.dart';
 import 'package:checkout_app/core/utils/secret_key.dart';
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/amount.dart';
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/details.dart';
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/items.dart';
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/orders_list.dart';
+import 'package:checkout_app/features/checkout/presentation/views/widgets/thanks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
@@ -26,15 +28,20 @@ void executePaypalPayment(BuildContext context) {
         note: "Contact us for any questions on your order.",
         onSuccess: (Map params) async {
           log("onSuccess: $params");
-          Navigator.pop(context);
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) {
+            return const ThanksView();
+          }));
         },
         onError: (error) {
           log("onError: $error");
           Navigator.pop(context);
+          showSnackBar(context, error.toString());
         },
         onCancel: () {
           log('cancelled:');
           Navigator.pop(context);
+          showSnackBar(context, 'cancelled');
         },
       ),
     ),

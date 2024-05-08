@@ -8,7 +8,7 @@ class CustomDashedDivider extends StatelessWidget {
     return Row(
       children: List.generate(
         30,
-            (index) => Expanded(
+        (index) => Expanded(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 2),
             height: 2,

@@ -3,7 +3,8 @@ import 'package:checkout_app/features/checkout/data/models/order_info_model.dart
 import 'package:flutter/material.dart';
 
 class PaymentInfoItem extends StatelessWidget {
-  const PaymentInfoItem({Key? key, required this.orderInfoModel,required this.style})
+  const PaymentInfoItem(
+      {Key? key, required this.orderInfoModel, required this.style})
       : super(key: key);
   final PaymentInfoModel orderInfoModel;
   final TextStyle? style;

@@ -50,9 +50,7 @@ class ThanksViewBodyContent extends StatelessWidget {
           const Spacer(),
           const CustomPaid(),
           SizedBox(
-            height: height > 700
-                ? (height * .2 / 2) - 30
-                : 10,
+            height: height > 700 ? (height * .2 / 2) - 30 : 10,
           ),
         ],
       ),

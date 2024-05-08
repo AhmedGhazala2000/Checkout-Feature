@@ -1,5 +1,7 @@
+import 'package:checkout_app/features/checkout/presentation/manager/payment_stripe_cubit/payment_stripe_cubit.dart';
 import 'package:checkout_app/features/checkout/presentation/views/widgets/payment_method_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentMethods extends StatefulWidget {
   const PaymentMethods({Key? key}) : super(key: key);
@@ -13,7 +15,6 @@ class _PaymentMethodsState extends State<PaymentMethods> {
     'assets/images/CardImage.svg',
     'assets/images/PayPalImage.svg',
   ];
-  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +27,12 @@ class _PaymentMethodsState extends State<PaymentMethods> {
             String value = e.value;
             return GestureDetector(
               onTap: () {
-                currentIndex = index;
+                BlocProvider.of<PaymentStripeCubit>(context).currentIndex = index;
                 setState(() {});
               },
               child: PaymentMethodWidget(
                 assetImage: value,
-                isSelected: currentIndex == index,
+                isSelected: BlocProvider.of<PaymentStripeCubit>(context).currentIndex == index,
               ),
             );
           },

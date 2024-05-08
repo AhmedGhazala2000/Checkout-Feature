@@ -1,6 +1,6 @@
 import 'package:checkout_app/core/utils/api_services.dart';
 import 'package:checkout_app/core/utils/stripe_services.dart';
-import 'package:checkout_app/features/checkout/data/repos/checkout_repo_impl.dart';
+import 'package:checkout_app/features/checkout/data/repos/stripe_checkout_repo_impl.dart';
 import 'package:checkout_app/features/checkout/presentation/manager/payment_stripe_cubit/payment_stripe_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class CheckoutViewBody extends StatelessWidget {
                       builder: (context) {
                         return BlocProvider(
                             create: (context) => PaymentStripeCubit(
-                                  CheckoutRepoImpl(
+                                  StripeCheckoutRepoImpl(
                                     stripeServices: StripeServices(
                                       apiServices: ApiServices(
                                         dio: Dio(),
