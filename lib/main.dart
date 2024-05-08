@@ -8,7 +8,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'core/utils/simple_bloc_observers.dart';
 
 void main() {
-  Stripe.publishableKey = ApiKeys.publishableKey;
+  Stripe.publishableKey = StripeKeys.publishableKey;
   Bloc.observer = SimpleBlocObservers();
   runApp(
     DevicePreview(

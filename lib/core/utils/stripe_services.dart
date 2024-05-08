@@ -18,7 +18,7 @@ class StripeServices {
       url: '$baseUrl/v1/payment_intents',
       body: paymentIntentInputModel.toJson(),
       contentType: Headers.formUrlEncodedContentType,
-      token: ApiKeys.secretKey,
+      token: StripeKeys.secretKey,
     );
     var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
     return paymentIntentModel;

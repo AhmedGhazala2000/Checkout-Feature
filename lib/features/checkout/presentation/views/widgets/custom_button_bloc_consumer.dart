@@ -1,10 +1,11 @@
-import 'package:checkout_app/features/checkout/data/models/payment_intent_input_model.dart';
 import 'package:checkout_app/features/checkout/presentation/manager/payment_stripe_cubit/payment_stripe_cubit.dart';
+import 'package:checkout_app/features/checkout/presentation/views/widgets/execute_stripe_payment.dart';
 import 'package:checkout_app/features/checkout/presentation/views/widgets/thanks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'custom_button.dart';
+import 'execute_paypal_payment.dart';
 
 class CustomButtonBlocConsumer extends StatelessWidget {
   const CustomButtonBlocConsumer({
@@ -32,10 +33,9 @@ class CustomButtonBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return CustomButton(
           onPressed: () {
-            PaymentIntentInputModel paymentIntentInputModel =
-                const PaymentIntentInputModel(amount: '100', currency: 'usd');
-            BlocProvider.of<PaymentStripeCubit>(context)
-                .makePayment(paymentIntentInputModel: paymentIntentInputModel);
+            //executeStripePayment(context);
+
+            executePaypalPayment(context);
           },
           isLoading: state is PaymentStripeLoading ? true : false,
           text: 'Continue',
