@@ -20,11 +20,11 @@ class CustomListTile extends StatelessWidget {
         ),
         title: Text(
           'Credit Card',
-          style: AppStyles.styleRegular18(),
+          style: AppStyles.styleRegular18,
         ),
         subtitle: Text(
           'Mastercard **78',
-          style: AppStyles.styleRegular16(),
+          style: AppStyles.styleRegular16,
         ),
       ),
     );

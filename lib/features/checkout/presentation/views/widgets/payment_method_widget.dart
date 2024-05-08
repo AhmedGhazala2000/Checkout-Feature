@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PaymentMethodWidget extends StatelessWidget {
@@ -13,8 +14,8 @@ class PaymentMethodWidget extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
       margin: const EdgeInsets.only(left: 20),
-      width: 103,
-      height: 62,
+      width: 103.w,
+      height: 62.h,
       decoration: ShapeDecoration(
         color: Colors.white,
         shadows: isSelected
@@ -29,7 +30,7 @@ class PaymentMethodWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           side: BorderSide(
             color: isSelected ? const Color(0xff34A853) : Colors.grey,
-            width: isSelected ? 1.5 : 1,
+            width: isSelected ? 1.5.w : 1.w,
           ),
         ),
       ),

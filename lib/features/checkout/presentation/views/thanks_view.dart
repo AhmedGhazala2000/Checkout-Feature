@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'custom_app_bar.dart';
-import 'thanks_view_body.dart';
+import 'widgets/custom_app_bar.dart';
+import 'widgets/thanks_view_body.dart';
 
 class ThanksView extends StatelessWidget {
   const ThanksView({Key? key}) : super(key: key);

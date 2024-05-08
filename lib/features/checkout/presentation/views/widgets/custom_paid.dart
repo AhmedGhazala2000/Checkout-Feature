@@ -1,5 +1,6 @@
 import 'package:checkout_app/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomPaid extends StatelessWidget {
@@ -15,21 +16,21 @@ class CustomPaid extends StatelessWidget {
           size: 70,
         ),
         Container(
-          width: 115,
-          height: 60,
+          width: 115.w,
+          height: 60.h,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
-              side: const BorderSide(
-                color: Color(0xff34A853),
-                width: 1.5,
+              side:  BorderSide(
+                color: const Color(0xff34A853),
+                width: 1.5.w,
               ),
             ),
           ),
           child: Center(
             child: Text(
               'PAID',
-              style: AppStyles.styleSemiBold24()
+              style: AppStyles.styleSemiBold24
                   .copyWith(color: const Color(0xff34A853)),
             ),
           ),

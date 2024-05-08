@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDashedDivider extends StatelessWidget {
   const CustomDashedDivider({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class CustomDashedDivider extends StatelessWidget {
         (index) => Expanded(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 2),
-            height: 2,
+            height: 2.h,
             color: const Color(0xffB8B8B8),
           ),
         ),

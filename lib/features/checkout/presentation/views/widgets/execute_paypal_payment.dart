@@ -6,7 +6,7 @@ import 'package:checkout_app/features/checkout/data/models/paypal_transaction_mo
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/details.dart';
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/items.dart';
 import 'package:checkout_app/features/checkout/data/models/paypal_transaction_model/orders_list.dart';
-import 'package:checkout_app/features/checkout/presentation/views/widgets/thanks_view.dart';
+import 'package:checkout_app/features/checkout/presentation/views/thanks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 

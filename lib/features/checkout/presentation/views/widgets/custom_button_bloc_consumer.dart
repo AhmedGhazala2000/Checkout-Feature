@@ -1,7 +1,7 @@
 import 'package:checkout_app/core/functions/show_snack_bar.dart';
 import 'package:checkout_app/features/checkout/presentation/manager/payment_stripe_cubit/payment_stripe_cubit.dart';
 import 'package:checkout_app/features/checkout/presentation/views/widgets/execute_stripe_payment.dart';
-import 'package:checkout_app/features/checkout/presentation/views/widgets/thanks_view.dart';
+import 'package:checkout_app/features/checkout/presentation/views/thanks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

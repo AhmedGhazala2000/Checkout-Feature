@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:checkout_app/features/checkout/presentation/views/widgets/thanks_view.dart';
+import 'package:checkout_app/features/checkout/presentation/views/thanks_view.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_button.dart';

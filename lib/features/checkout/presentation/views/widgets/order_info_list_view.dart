@@ -23,7 +23,7 @@ class OrderInfoListView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 3),
           child: PaymentInfoItem(
             orderInfoModel: listModel[index],
-            style: AppStyles.styleRegular18(),
+            style: AppStyles.styleRegular18,
           ),
         );
       },

@@ -13,11 +13,11 @@ class TotalPrice extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppStyles.styleSemiBold24(),
+          style: AppStyles.styleSemiBold24,
         ),
         Text(
           value,
-          style: AppStyles.styleSemiBold24(),
+          style: AppStyles.styleSemiBold24,
         ),
       ],
     );

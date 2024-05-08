@@ -16,7 +16,7 @@ class PaymentInfoItem extends StatelessWidget {
       children: [
         Text(
           orderInfoModel.title,
-          style: AppStyles.styleRegular18(),
+          style: AppStyles.styleRegular18,
         ),
         Text(
           orderInfoModel.value,

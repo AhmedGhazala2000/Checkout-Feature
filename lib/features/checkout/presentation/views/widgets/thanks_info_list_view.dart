@@ -23,7 +23,7 @@ class ThanksInfoListView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20),
           child: PaymentInfoItem(
             orderInfoModel: listModel[index],
-            style: AppStyles.styleSemiBold18(),
+            style: AppStyles.styleSemiBold18,
           ),
         );
       },

@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
           ? const CircularProgressIndicator()
           : Text(
               text,
-              style: AppStyles.styleMedium22(),
+              style: AppStyles.styleMedium22,
             ),
     );
   }

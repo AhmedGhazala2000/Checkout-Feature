@@ -19,7 +19,7 @@ AppBar customAppBar(BuildContext context, [String? title]) {
     ),
     title: Text(
       title ?? '',
-      style: AppStyles.styleMedium25().copyWith(color: Colors.black),
+      style: AppStyles.styleMedium25.copyWith(color: Colors.black),
     ),
   );
 }
